@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krits | kritsanapong.sriphan@gmail.com</title>
+    <link rel="icon" href="./img/logo.png" type="image/png" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maitree&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2405925082.js" crossorigin="anonymous"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Maitree', serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 40%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: black;
+            overflow: hidden;
+
+        }
+
+        .main {
+            width: 60%;
+            top: 0;
+            left: 0;
+        }
+
+        .bg-img {
+            background-image: url('./img/color/IMG_0099.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100%;
+        }
+
+        .header-m {
+            padding: 100px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-img {
+            display: none;
+            width: 60%;
+        }
+
+        .head-txt {
+            font-size: 60px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .img-column {
+            -ms-flex: 50%;
+            flex: 50%;
+            max-width: 50%;
+            padding: 0 4px;
+        }
+
+        .img-column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .img-row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        .skill-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .skills {
+            text-align: right;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .htmlcssphp {
+            width: 90%;
+            background-color: #5484A4;
+        }
+
+        .photographer {
+            width: 75%;
+            background-color: #5484A4;
+        }
+
+        .colourgrading {
+            width: 80%;
+            background-color: #5484A4;
+        }
+
+        .webdesign {
+            width: 80%;
+            background-color: #5484A4;
+        }
+
+        .project-row {
+            margin: 8px -16px;
+        }
+
+        .project-row,
+        .project-row>.project-column {
+            padding: 8px;
+        }
+
+        .project-column {
+            float: left;
+            width: 50%;
+        }
+
+        .project-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .project-content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        #sidenav a {
+            position: fixed;
+            left: -135px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 150px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #sidenav a:hover {
+            left: 0;
+        }
+
+        #sideportfolio {
+            top: 20px;
+            background-color: #555;
+        }
+
+        #sideabout {
+            top: 85px;
+            background-color: #555;
+        }
+
+        #sidemyskill {
+            top: 150px;
+            background-color: #555;
+        }
+
+        #sideproject {
+            top: 215px;
+            background-color: #555
+        }
+
+        #sidecontact {
+            top: 280px;
+            background-color: #555
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            padding: 0 4px;
+            flex: 50%;
+            max-width: 50%;
+        }
+
+        .contact-table td {
+            padding: 10px;
+        }
+
+        .footer {
+            padding-top: 20px;
+            text-align: center;
+            background-color: #555;
+            color: #ffffff;
+            margin: 0;
+            height: 150px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        input[type=text] {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 4px;
+            box-sizing: border-box;
+
+            margin-top: 6px;
+
+            margin-bottom: 16px;
+
+            resize: vertical
+        }
+
+        button[type=submit] {
+            background-color: #5484A4;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+        input[type=submit]:hover {
+            background-color: #73b9e8;
+        }
+
+        .btntop {
+            background-color: #b4b4b4;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btntop:hover {
+            background-color: #5484A4;
+        }
+
+        .hidesidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: hsla(0, 0%, 7%, 0.559);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .hidesidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .hidesidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .hidesidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .fixmenu {
+            top: 5px;
+            font-size: 20px;
+            margin-left: 20px;
+            position: fixed;
+            right: 10px;
+            display: none;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-column {
+                float: left;
+                width: 100%;
+            }
+
+            .fixmenu {
+                display: block;
+            }
+
+            .header-img {
+                display: inline;
+            }
+
+            .head-txt {
+                font-size: 45px;
+                font-weight: bolder;
+                margin-bottom: 20px;
+            }
+
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+
+            .sidebar {
+                display: none;
+
+            }
+
+            .header-m {
+                padding: 0;
+            }
+
+            .sidenav {
+                display: none;
+            }
+
+            .main {
+                width: 100%;
+            }
+
+            .img-column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fixmenu">
+        <button onclick="openNav()" class="btntop"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="myHidesidenav" class="hidesidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#portfolio">Fav Photos</a>
+        <a href="#about">About Me</a>
+        <a href="#myskill">My Skill</a>
+        <a href="#myproject">Project Done</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="sidenav" class="sidenav">
+        <a href="#portfolio" id="sideportfolio">Fav Photos</a>
+        <a href="#about" id="sideabout">About Me</a>
+        <a href="#myskill" id="sidemyskill">My Skill</a>
+        <a href="#myproject" id="sideproject">Project Done</a>
+        <a href="#contact" id="sidecontact">Contact</a>
+    </div>
+
+    <div class="sidebar">
+        <div class="bg-img"></div>
+    </div>
+    <div class="main">
+        <div class="header-m">
+            <h1 class="head-txt">Kritsanapong Sriphan</h1>
+            <p>Basic Web Devoloper And Newbie Photographer.</p>
+            <img src="./img/color/IMG_0099.jpg" alt="" class="header-img">
+        </div>
+
+        <div class="content">
+
+            <div id="portfolio">
+                <h2>My Favorite Photos</h2>
+                <hr>
+                <div class="img-row">
+                    <div class="img-column">
+                        <img src="./img/color/IMG_0380.jpg" style="width:100%">
+                        <img src="./img/color/IMG_0544.jpg" style="width:100%">
+                        <img src="./img/color/IMG_0156.jpg" style="width:100%">
+                        <img src="./img/color/IMG_0392.jpg" style="width:100%">
+                    </div>
+                    <div class="img-column">
+                        <img src="./img/color/IMG_0667.jpg" style="width:100%">
+                        <img src="./img/color/IMG_1233.jpg" style="width:100%">
+                        <img src="./img/color/P4010619.jpg" style="width:100%">
+                    </div>
+                </div>
+            </div>
+            <div id="about" style="margin-top:50px;">
+                <h2>About</h2>
+                <hr>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Krits is an web devoloper and freelance  in Chaiyaphum, TH. He is interesting about Web Application Devoloper 
+                    he has an aptitude for HTML, CSS, PHP, SQL And  Responsive Web Design.</p>
+            </div>
+            <div id="myskill" style="margin-top:50px;">
+                <h2>My Skills</h2>
+                <hr>
+                <h3 style="text-decoration:underline;">Hard Skills</h3>
+                <p>Web Devoloper Skills</p>
+                <ul>
+                    <li>HyperText Markup Language (HTML)</li>
+                    <li>Cascading Style Sheets (CSS)</li>
+                    <li>Javascript</li>
+                    <li>PHP Hypertext Preprocessor (PHP)</li>
+                    <li>Responsive Web Design</li>
+                    <li>Bootstrap CSS Framework</li>
+                </ul>
+                <p>Database Management Skills</p>
+                <ul>
+                    <li>Basic Database Design</li>
+                    <li>Database Administration</li>
+                    <li>Structured Query Language (SQL)</li>
+                </ul>
+
+                <p>Linux Operating System</p>
+                <ul>
+                    <li>Installs & Upgrades</li>
+                    <li>User Account Management</li>
+                    <li>Backup and Restore</li>
+                </ul>
+
+                <p>Adobe Software</p>
+                <ul>
+                    <li>Photoshop - Photo editing, Typography, Graphic Designer</li>
+                    <li>Lightroom - Colourgrading, Retouch</li>
+                    <li>Premiere Pro - Video Edit, Colourgrading</li>
+                </ul>
+
+                <p>Microsoft Office</p>
+                <ul>
+                    <li>Word</li>
+                    <li>Excel</li>
+                    <li>Power point</li>
+                    <li>Access</li>
+                    <li>Outlook</li>
+                </ul>
+
+                <p>Other Computer Skills</p>
+                <ul>
+                    <li>Repairing Computer Parts</li>
+                    <li>Hardware and Software Troubleshooting</li>
+                    <li>Network Configuration</li>
+                    <li>Desktop Management Interface</li>
+                    <li>Components Configuration</li>
+                </ul>
+
+
+
+                <h3 style="text-decoration:underline;">Soft Skills</h3>
+                <ul>
+                    <li>Communication</li>
+                    <li>Team Collaboration</li>
+                    <li>Time Management</li>
+                    <li>Perform Under Pressure</li>
+                    <li>Critical Thinking And Decision making</li>
+                    <li>Life Long Learning</li>
+                </ul>
+
+                <h3 style="text-decoration:underline;">Certificate</h3>
+                <img src="./img/cer.bmp" alt="" width="100%">
+
+            </div>
+            <div id="myproject" style="margin-top:50px;">
+                <h2>Project Done</h2>
+                <hr>
+                <div class="project-row">
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p1.bmp" alt="Community Isolation System" style="width:100%">
+                            <h3>Community Isolation System</h3>
+                            <p>ระบบโรงพยาบาลสนาม บันทึกข้อมูลผู้ป่วย โควิด-19 เข้ามารับการรักษา
+                                แบบ One Stop Services พร้อมทั้ง Dashboard สรุปข้อมูล</p>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p2.bmp" alt="Physical System Manager" style="width:100%">
+                            <h3>Physical System Manager</h3>
+                            <p>ระบบบันทึกข้อมูลผู้ป่วยกายภาพในหน่วยบริการผ่านทาง Web Browser
+                                และสามารถส่งออกรายงานเป็นไฟล์เอกสาร เพื่อลดกระบวนการทำงานที่สับซ้อน</p>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p5.jpg" alt="Domitory Management" style="width:100%">
+                            <h3>Domitory Management</h3>
+                            <p>จัดการหอพักอย่างเรียบง่าย ปลอดภัย ผ่านทาง Web Browser
+                                รองรับทั้งห้องพักรายเดือน และห้องพักรายวัน</p>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p4.bmp" alt="Business Webdesign" style="width:100%">
+                            <h3>Business Webdesign</h3>
+                            <p>ออกแบบเว็บสำหรับองค์กรหรือธุรกิจเพื่อโปรโมทสินค้าหรือขายงาน ตามความต้องการ โดยมีหน้าเว็บที่ทันสมัย และเป็น Responsive Design</p>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p6.bmp" alt="Business Webdesign" style="width:100%">
+                            <h3>Precribe Pttype</h3>
+                            <p>ระบบจัดการสิทธิ์การรักษาบน Database ของศูนย์บริการ</p>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <div class="project-content">
+                            <img src="./img/p7.gif" alt="Business Webdesign" style="width:100%">
+                            <h3>Portfolio Webdesign</h3>
+                            <p>โปรเจค Certificate ออกแบบเว็บรวมผลงาน Portfolio แบบ Responsive Design</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="contact" style="margin-top:50px;margin-bottom: 50px;">
+                    <h2>Contact with me</h2>
+                    <hr>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="column">
+                            <img src="./img/color/IMG_0495.jpg" alt="" style="width:100%">
+                        </div>
+                        <div class="column">
+                            <table class="contact-table">
+                                <tr>
+                                    <td><i class="fa-solid fa-location-dot"></i></td>
+                                    <td><span style="margin-left:10px;">Chaiyaphum, TH | Nakhon Ratchasima, TH</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-envelope"></i></td>
+                                    <td><span style="margin-left:10px;">kritsanapong.sriphan@gmail.com</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-phone"></i></td>
+                                    <td><span style="margin-left:10px;">+6693-536-6570</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-brands fa-facebook"></i></td>
+                                    <td><span style="margin-left:10px;">Kritsanapong Sriphan</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="btntop" onclick="topFunction()">Go to top</button>
+            <p><i class="fa-solid fa-copyright"></i> All Rights Reserved by Kritsanapong Sriphan</p>
+            <a href="https://www.facebook.com/kritsanapong.sriphan/"><i class="fa-brands fa-facebook"></i></a> <a
+                href="https://www.instagram.com/ohmksnp/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCyhzlCZ2U2coN1G1c7yJC5w"><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+        <script language="JavaScript">
+            var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+
+            if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+            function mischandler() {
+                return false;
+            }
+
+            function mousehandler(e) {
+                var myevent = (isNS) ? e : event;
+                var eventbutton = (isNS) ? myevent.which : myevent.button;
+                if ((eventbutton == 2) || (eventbutton == 3)) return false;
+            }
+            document.oncontextmenu = mischandler;
+            document.onmousedown = mousehandler;
+            document.onmouseup = mousehandler;
+
+            mybutton = document.getElementById("myBtn");
+
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            function openNav() {
+                document.getElementById("myHidesidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("myHidesidenav").style.width = "0";
+            }
+        </script>
+</body>
+
+</html>
