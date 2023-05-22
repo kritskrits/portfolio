@@ -312,10 +312,25 @@
             list-style-type: circle;
         }
 
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
         @media screen and (max-width: 768px) {
             .project-column {
                 float: left;
                 width: 100%;
+            }
+
+            .grid-container {
+                grid-template-columns: auto;
             }
 
             .fixmenu {
@@ -416,8 +431,9 @@
             <div id="about" style="margin-top:50px;">
                 <h2>About</h2>
                 <hr>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;Krits is an web devoloper and freelance  in Chaiyaphum, TH. He is interesting about Web Application Devoloper 
-                    he has an aptitude for HTML, CSS, PHP, SQL And  Responsive Web Design.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;Krits is an web devoloper and freelance in Chaiyaphum, TH. He is interesting
+                    about Web Application Devoloper
+                    he has an aptitude for HTML, CSS, PHP, SQL And Responsive Web Design.</p>
             </div>
             <div id="myskill" style="margin-top:50px;">
                 <h2>My Skills</h2>
@@ -492,129 +508,121 @@
             <div id="myproject" style="margin-top:50px;">
                 <h2>Project Done</h2>
                 <hr>
-                <div class="project-row">
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p1.bmp" alt="Community Isolation System" style="width:100%">
-                            <h3>Community Isolation System</h3>
-                            <p>ระบบโรงพยาบาลสนาม บันทึกข้อมูลผู้ป่วย โควิด-19 เข้ามารับการรักษา
-                                แบบ One Stop Services พร้อมทั้ง Dashboard สรุปข้อมูล</p>
-                        </div>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="./img/p1.bmp" alt="Community Isolation System" style="width:100%">
+                        <h3>Community Isolation System</h3>
+                        <p>ระบบโรงพยาบาลสนาม บันทึกข้อมูลผู้ป่วย โควิด-19 เข้ามารับการรักษา
+                            แบบ One Stop Services พร้อมทั้ง Dashboard สรุปข้อมูล</p>
                     </div>
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p2.jpg" alt="Physical System Manager" style="width:100%">
-                            <h3>Physical System Manager</h3>
-                            <p>ระบบบันทึกข้อมูลผู้ป่วยกายภาพในหน่วยบริการผ่านทาง Web Browser
-                                และสามารถส่งออกรายงานเป็นไฟล์เอกสาร เพื่อลดกระบวนการทำงานที่ซับซ้อน</p>
-                        </div>
+                    <div class="grid-item">
+                        <img src="./img/p2.jpg" alt="Physical System Manager" style="width:100%">
+                        <h3>Physical System Manager</h3>
+                        <p>ระบบบันทึกข้อมูลผู้ป่วยกายภาพในหน่วยบริการผ่านทาง Web Browser
+                            และสามารถส่งออกรายงานเป็นไฟล์เอกสาร เพื่อลดกระบวนการทำงานที่ซับซ้อน</p>
                     </div>
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p5.jpg" alt="Domitory Management" style="width:100%">
-                            <h3>Domitory Management</h3>
-                            <p>จัดการหอพักอย่างเรียบง่าย ปลอดภัย ผ่านทาง Web Browser
-                                รองรับทั้งห้องพักรายเดือน และห้องพักรายวัน</p>
-                        </div>
+                    <div class="grid-item">
+                        <img src="./img/p5.jpg" alt="Domitory Management" style="width:100%">
+                        <h3>Domitory Management</h3>
+                        <p>จัดการหอพักอย่างเรียบง่าย ปลอดภัย ผ่านทาง Web Browser
+                            รองรับทั้งห้องพักรายเดือน และห้องพักรายวัน</p>
                     </div>
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p4.bmp" alt="Business Webdesign" style="width:100%">
-                            <h3>Business Webdesign</h3>
-                            <p>ออกแบบเว็บสำหรับองค์กรหรือธุรกิจเพื่อโปรโมทสินค้าหรือขายงาน ตามความต้องการ โดยมีหน้าเว็บที่ทันสมัย และเป็น Responsive Design</p>
-                        </div>
+                    <div class="grid-item">
+                        <img src="./img/p4.bmp" alt="Business Webdesign" style="width:100%">
+                        <h3>Business Webdesign</h3>
+                        <p>ออกแบบเว็บสำหรับองค์กรหรือธุรกิจเพื่อโปรโมทสินค้าหรือขายงาน ตามความต้องการ
+                            โดยมีหน้าเว็บที่ทันสมัย และเป็น Responsive Design</p>
                     </div>
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p6.jpg" alt="Business Webdesign" style="width:100%">
-                            <h3>Precribe Pttype</h3>
-                            <p>ระบบจัดการสิทธิ์การรักษาบน Database ของศูนย์บริการเพื่อใช้กำหนดสิทธิ์การรักษาเพื่อส่งเบิกกับทาง สปสช.
-                            </p>
-                        </div>  
+                    <div class="grid-item">
+                        <img src="./img/p6.jpg" alt="Business Webdesign" style="width:100%">
+                        <h3>Precribe Pttype</h3>
+                        <p>ระบบจัดการสิทธิ์การรักษาบน Database
+                            ของศูนย์บริการเพื่อใช้กำหนดสิทธิ์การรักษาเพื่อส่งเบิกกับทาง สปสช.
+                        </p>
                     </div>
-                    <div class="project-column">
-                        <div class="project-content">
-                            <img src="./img/p7.gif" alt="Business Webdesign" style="width:100%">
-                            <h3>Portfolio Webdesign</h3>
-                            <p>โปรเจค Certificate ออกแบบเว็บรวมผลงาน Portfolio แบบ Responsive Design</p>
-                        </div>
+                    <div class="grid-item">
+                        <img src="./img/p7.gif" alt="Business Webdesign" style="width:100%">
+                        <h3>Portfolio Webdesign</h3>
+                        <p>โปรเจค Certificate ออกแบบเว็บรวมผลงาน Portfolio แบบ Responsive Design</p>
                     </div>
                 </div>
+            </div>
 
 
-                <div id="contact" style="margin-top:50px;margin-bottom: 50px;">
-                    <h2>Contact with me</h2>
-                    <hr>
-                    <div class="row" style="margin-bottom: 20px;">
-                        <div class="column">
-                            <img src="./img/color/IMG_0495.jpg" alt="" style="width:100%">
-                        </div>
-                        <div class="column">
-                            <table class="contact-table">
-                                <tr>
-                                    <td><i class="fa-solid fa-location-dot"></i></td>
-                                    <td><span style="margin-left:10px;">Chaiyaphum, TH</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa-solid fa-envelope"></i></td>
-                                    <td><span style="margin-left:10px;">kritsr.dev@gmail.com</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa-solid fa-phone"></i></td>
-                                    <td><span style="margin-left:10px;">+6693-536-6570</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fa-brands fa-facebook"></i></td>
-                                    <td><span style="margin-left:10px;">Kritsanapong Sriphan</span></td>
-                                </tr>
-                            </table>
-                        </div>
+
+            <div id="contact" style="margin-top:50px;margin-bottom: 50px;">
+                <h2>Contact with me</h2>
+                <hr>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="column">
+                        <img src="./img/color/IMG_0495.jpg" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <table class="contact-table">
+                            <tr>
+                                <td><i class="fa-solid fa-location-dot"></i></td>
+                                <td><span style="margin-left:10px;">Chaiyaphum, TH</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-solid fa-envelope"></i></td>
+                                <td><span style="margin-left:10px;">kritsr.dev@gmail.com</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-solid fa-phone"></i></td>
+                                <td><span style="margin-left:10px;">+6693-536-6570</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-brands fa-facebook"></i></td>
+                                <td><span style="margin-left:10px;">Kritsanapong Sriphan</span></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <button class="btntop" onclick="topFunction()">Go to top</button>
-            <p><i class="fa-solid fa-copyright"></i> All Rights Reserved by Kritsanapong Sriphan</p>
-            <a href="https://www.facebook.com/kritsanapong.sriphan/"><i class="fa-brands fa-facebook"></i></a> <a
-                href="https://www.instagram.com/ohmksnp/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.youtube.com/channel/UCyhzlCZ2U2coN1G1c7yJC5w"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <div class="footer">
+        <button class="btntop" onclick="topFunction()">Go to top</button>
+        <p><i class="fa-solid fa-copyright"></i> All Rights Reserved by Kritsanapong Sriphan</p>
+        <a href="https://www.facebook.com/kritsanapong.sriphan/"><i class="fa-brands fa-facebook"></i></a> <a
+            href="https://www.instagram.com/ohmksnp/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCyhzlCZ2U2coN1G1c7yJC5w"><i class="fa-brands fa-youtube"></i></a>
 
-        </div>
-        <script language="JavaScript">
-            var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+    </div>
+    <script language="JavaScript">
+        var isNS = (navigator.appName == "Netscape") ? 1 : 0;
 
-            if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+        if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
 
-            function mischandler() {
-                return false;
-            }
+        function mischandler() {
+            return false;
+        }
 
-            function mousehandler(e) {
-                var myevent = (isNS) ? e : event;
-                var eventbutton = (isNS) ? myevent.which : myevent.button;
-                if ((eventbutton == 2) || (eventbutton == 3)) return false;
-            }
-            document.oncontextmenu = mischandler;
-            document.onmousedown = mousehandler;
-            document.onmouseup = mousehandler;
+        function mousehandler(e) {
+            var myevent = (isNS) ? e : event;
+            var eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton == 2) || (eventbutton == 3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
 
 
 
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 
-            function openNav() {
-                document.getElementById("myHidesidenav").style.width = "250px";
-            }
+        function openNav() {
+            document.getElementById("myHidesidenav").style.width = "250px";
+        }
 
-            function closeNav() {
-                document.getElementById("myHidesidenav").style.width = "0";
-            }
-        </script>
+        function closeNav() {
+            document.getElementById("myHidesidenav").style.width = "0";
+        }
+    </script>
 </body>
 
 </html>
